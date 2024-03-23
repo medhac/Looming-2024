@@ -24,10 +24,10 @@ public class LoomDemoApplication {
 	public void init() {
 		String  numberOfThreadPerRun = System.getProperty("numberOfThreadPerRun");
 		List<Integer> noOfThreadPerRunList = getNumberOfThreadPerRunList(numberOfThreadPerRun);
-	       for(int i = 0; i < noOfThreadPerRunList.size(); i++) {
-			   createVirtualThread.readFileWithVirtualThread(noOfThreadPerRunList.get(i));
-			   createThread.createThreadOldWay(noOfThreadPerRunList.get(i));
-		   }
+        for (Integer integer : noOfThreadPerRunList) {
+            createVirtualThread.readFileWithVirtualThread(integer);
+            createThread.createThreadOldWay(integer);
+        }
 	}
 
 	List<Integer>getNumberOfThreadPerRunList(String numberOfThreadPerRun) {
