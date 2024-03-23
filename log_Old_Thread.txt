@@ -1,0 +1,48 @@
+----------------------------------------
+DateTime: 2024-03-23 13:53:15
+Type : Old_Thread
+Number of Threads: 10
+Start time: 1711216395082
+End time: 1711216395083
+Total execution time: 0.001 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-23 13:53:15
+Type : Old_Thread
+Number of Threads: 100
+Start time: 1711216395099
+End time: 1711216395106
+Total execution time: 0.007 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-23 13:53:15
+Type : Old_Thread
+Number of Threads: 1000
+Start time: 1711216395309
+End time: 1711216395369
+Total execution time: 0.06 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-23 13:53:17
+Type : Old_Thread
+Number of Threads: 10000
+Start time: 1711216395756
+End time: 1711216397016
+Total execution time: 1.26 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-23 13:53:33
+Type : Old_Thread
+Number of Threads: 100000
+Start time: 1711216398922
+End time: 1711216413872
+Total execution time: 14.95 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-23 13:56:09
+Type : Old_Thread
+Number of Threads: 1000000
+Start time: 1711216434695
+End time: 1711216569991
+Total execution time: 135.296 seconds
+----------------------------------------
