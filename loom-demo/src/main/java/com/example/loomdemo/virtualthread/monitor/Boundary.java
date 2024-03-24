@@ -1,4 +1,4 @@
-package com.example.loomdemo.VirtualThread;
+package com.example.loomdemo.virtualthread.monitor;
 
 import com.example.loomdemo.util.GenerateChart;
 import com.example.loomdemo.util.ThreadType;

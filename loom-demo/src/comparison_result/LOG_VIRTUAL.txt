@@ -1,0 +1,48 @@
+----------------------------------------
+DateTime: 2024-03-24 14:05:25
+Type : VIRTUAL
+Number of Threads: 10
+Start time: 1711303525682
+End time: 1711303525690
+Total execution time: 0.008 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:05:25
+Type : VIRTUAL
+Number of Threads: 100
+Start time: 1711303525702
+End time: 1711303525711
+Total execution time: 0.009 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:05:25
+Type : VIRTUAL
+Number of Threads: 1000
+Start time: 1711303525887
+End time: 1711303525915
+Total execution time: 0.028 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:05:27
+Type : VIRTUAL
+Number of Threads: 10000
+Start time: 1711303527269
+End time: 1711303527415
+Total execution time: 0.146 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:05:28
+Type : VIRTUAL
+Number of Threads: 10000
+Start time: 1711303528662
+End time: 1711303528813
+Total execution time: 0.151 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:08:16
+Type : VIRTUAL
+Number of Threads: 1000000
+Start time: 1711303677420
+End time: 1711303696223
+Total execution time: 18.803 seconds
+----------------------------------------
