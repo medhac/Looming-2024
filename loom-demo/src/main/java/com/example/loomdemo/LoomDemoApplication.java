@@ -1,12 +1,15 @@
 package com.example.loomdemo;
 
+import com.example.loomdemo.threadcompare.CreatePlatformThread;
+import com.example.loomdemo.threadcompare.CreateVirtualThread;
+import com.example.loomdemo.util.GenerateChart;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.swing.*;
+import java.util.*;
 
 @SpringBootApplication
 public class LoomDemoApplication {
@@ -15,19 +18,34 @@ public class LoomDemoApplication {
 	private CreateVirtualThread createVirtualThread;
 
 	@Autowired
-	private CreateThread createThread;
+	private CreatePlatformThread createThread;
 
 	public static void main(String[] args) {
-		SpringApplication.run(LoomDemoApplication.class, args);
+		new SpringApplicationBuilder(LoomDemoApplication.class)
+				.headless(false).run(args);
 	}
+
 	@PostConstruct
 	public void init() {
 		String  numberOfThreadPerRun = System.getProperty("numberOfThreadPerRun");
 		List<Integer> noOfThreadPerRunList = getNumberOfThreadPerRunList(numberOfThreadPerRun);
-        for (Integer integer : noOfThreadPerRunList) {
-            createVirtualThread.readFileWithVirtualThread(integer);
-            createThread.createThreadOldWay(integer);
+		Map<Integer,Double> virtualThreadTimeMap = new TreeMap<>();
+		Map<Integer,Double> platformThreadTimeMap = new TreeMap<>();
+		for (Integer integer : noOfThreadPerRunList) {
+			platformThreadTimeMap = createThread.createPlatformThread(integer);
+			virtualThreadTimeMap = createVirtualThread.createVirtualThread(integer);
         }
+
+		Map<Integer, Double> finalVirtualThreadTimeMap = virtualThreadTimeMap;
+		Map<Integer, Double> finalPlatformThreadTimeMap = platformThreadTimeMap;
+		SwingUtilities.invokeLater(() -> {
+			GenerateChart chart = new GenerateChart();
+			chart.createComparisonReport(finalVirtualThreadTimeMap, finalPlatformThreadTimeMap);
+			chart.setSize(800, 400);
+			chart.setLocationRelativeTo(null);
+			chart.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+			chart.setVisible(true);
+		});
 	}
 
 	List<Integer>getNumberOfThreadPerRunList(String numberOfThreadPerRun) {
@@ -39,3 +57,4 @@ public class LoomDemoApplication {
 		return noOfThreadPerRunList;
 	}
 }
+//https://github.com/hakdogan/loom-examples/blob/main/virtual-threads/README.md

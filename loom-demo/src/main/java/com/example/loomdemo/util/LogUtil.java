@@ -1,17 +1,16 @@
-package com.example.loomdemo;
+package com.example.loomdemo.util;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-@Service
-public class Utils {
+@Component
+public class LogUtil {
 
     public String filePath = "C:\\WorkSpace\\Code\\Looming-2024\\loom-demo\\src\\comparison_result";
 
@@ -30,7 +29,7 @@ public class Utils {
                 "End time: " + endTime + "\n" +
                 "Total execution time: " + convertMillisToSeconds(totalTime) + " seconds\n"+
                 "----------------------------------------\n";
-            String fileName = "log_"+threadType+".txt";
+            String fileName = "LOG_"+threadType+".txt";
             createFileInFolder(fileName, filePath, content);
             System.out.println("Time log has been written to the file."+ content);
     }
