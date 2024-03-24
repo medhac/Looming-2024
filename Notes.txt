@@ -1,0 +1,2 @@
+//https://github.com/hakdogan/loom-examples/blob/main/virtual-threads/README.md
+//https://stackoverflow.com/questions/72116652/what-exactly-makes-java-virtual-threads-better

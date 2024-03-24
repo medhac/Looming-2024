@@ -44,6 +44,7 @@ public class LoomDemoApplication {
 			chart.setSize(800, 400);
 			chart.setLocationRelativeTo(null);
 			chart.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+			chart.setTitle("Platform vs Virtual Threads Benchmark Report");
 			chart.setVisible(true);
 		});
 	}
@@ -58,3 +59,4 @@ public class LoomDemoApplication {
 	}
 }
 //https://github.com/hakdogan/loom-examples/blob/main/virtual-threads/README.md
+//https://stackoverflow.com/questions/72116652/what-exactly-makes-java-virtual-threads-better
