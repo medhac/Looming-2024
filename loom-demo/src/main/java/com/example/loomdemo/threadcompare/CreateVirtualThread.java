@@ -1,18 +1,20 @@
-package com.example.loomdemo;
+package com.example.loomdemo.threadcompare;
 
+import com.example.loomdemo.util.ThreadType;
+import com.example.loomdemo.util.LogUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.CountDownLatch;
 @Component
 public class CreateVirtualThread {
 
     @Autowired
-    private Utils utils;
-
-    private static String threatType = "Virtual_Thread";
-
-    public  void readFileWithVirtualThread(int numberOfThreads) {
+    private LogUtil utils;
+    Map<Integer,Double> virtualthreadTimeMap = new TreeMap<>();
+    public   Map<Integer,Double> createVirtualThread(int numberOfThreads) {
         long startTime = System.currentTimeMillis();
         CountDownLatch latch = new CountDownLatch(numberOfThreads); // Initialize the latch with the number of threads
 
@@ -20,7 +22,7 @@ public class CreateVirtualThread {
             int finalI = i;
             Thread.startVirtualThread(() -> {
                 // Code to be executed by each thread
-                System.out.println("Virtual Thread " + Thread.currentThread().getName()+"-"+ finalI + " is running");
+                System.out.println(ThreadType.VIRTUAL.name() +" : "+ Thread.currentThread().getName()+"-"+ finalI + " is running");
                 latch.countDown(); // Decrement the latch count after the thread finishes
             });
         }
@@ -28,15 +30,17 @@ public class CreateVirtualThread {
         try {
             latch.await(); // Wait for all threads to finish
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("An error occurred while waiting for the threads to finish: " + e.getMessage());
         }
 
         if (latch.getCount() == 0 ){
-            System.out.println("Virtual thread count: " + latch.getCount());
+            System.out.println(ThreadType.VIRTUAL.getDesc() + " : " + latch.getCount());
             long endTime = System.currentTimeMillis();
             long totalTime = endTime - startTime;
-            utils.logTime(startTime, endTime, totalTime, threatType,numberOfThreads);
-            System.out.println("Virtual thread end");
+            virtualthreadTimeMap.put(numberOfThreads,utils.convertMillisToSeconds(totalTime));
+            utils.logTime(startTime, endTime, totalTime, ThreadType.VIRTUAL.name(),numberOfThreads);
+            System.out.println(ThreadType.VIRTUAL.getDesc() + ": end");
         }
+        return virtualthreadTimeMap;
     }
 }

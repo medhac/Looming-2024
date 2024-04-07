@@ -1,0 +1,96 @@
+----------------------------------------
+DateTime: 2024-03-24 14:05:25
+Type : PLATFORM
+Number of Threads: 10
+Start time: 1711303525674
+End time: 1711303525675
+Total execution time: 0.001 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:05:25
+Type : PLATFORM
+Number of Threads: 100
+Start time: 1711303525692
+End time: 1711303525700
+Total execution time: 0.008 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:05:25
+Type : PLATFORM
+Number of Threads: 1000
+Start time: 1711303525712
+End time: 1711303525875
+Total execution time: 0.163 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:05:27
+Type : PLATFORM
+Number of Threads: 10000
+Start time: 1711303525916
+End time: 1711303527268
+Total execution time: 1.352 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:05:28
+Type : PLATFORM
+Number of Threads: 10000
+Start time: 1711303527416
+End time: 1711303528660
+Total execution time: 1.244 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-03-24 14:07:57
+Type : PLATFORM
+Number of Threads: 1000000
+Start time: 1711303528814
+End time: 1711303677419
+Total execution time: 148.605 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-04-07 18:40:47
+Type : PLATFORM
+Number of Threads: 10
+Start time: 1712529647657
+End time: 1712529647657
+Total execution time: 0.0 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-04-07 18:40:47
+Type : PLATFORM
+Number of Threads: 100
+Start time: 1712529647673
+End time: 1712529647677
+Total execution time: 0.004 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-04-07 18:40:47
+Type : PLATFORM
+Number of Threads: 1000
+Start time: 1712529647686
+End time: 1712529647799
+Total execution time: 0.113 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-04-07 18:40:48
+Type : PLATFORM
+Number of Threads: 10000
+Start time: 1712529647817
+End time: 1712529648942
+Total execution time: 1.125 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-04-07 18:40:50
+Type : PLATFORM
+Number of Threads: 10000
+Start time: 1712529649046
+End time: 1712529650077
+Total execution time: 1.031 seconds
+----------------------------------------
+----------------------------------------
+DateTime: 2024-04-07 18:43:10
+Type : PLATFORM
+Number of Threads: 1000000
+Start time: 1712529650185
+End time: 1712529790595
+Total execution time: 140.41 seconds
+----------------------------------------
